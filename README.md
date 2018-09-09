@@ -3,6 +3,6 @@
 ①$ git init 
 ②$ git add . 
 ③$ git commit -m "first commit" 
-④$ git remote add origin https://github.com/yourName/yourRepo.git 
+④$ git remote add origin https://github.com/shenjian2018/suwen.git
 ⑤$ git push -u origin master 
 
