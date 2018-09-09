@@ -1,0 +1,29 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+
+http://www.springframework.org/schema/context
+
+http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<bean id="targetConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+	<property name="brokerURL" value="tcp://192.168.0.100:61616"></property>
+	</bean>
+	<bean id="connectionFactory"	class="org.springframework.jms.connection.SingleConnectionFactory">
+		<property name="targetConnectionFactory" ref="targetConnectionFactory"></property>
+	</bean>
+  
+    <bean id="queueDestination" class="org.apache.activemq.command.ActiveMQQueue">
+    <constructor-arg value="queue"></constructor-arg>
+    </bean>
+    
+    <bean id="jmsTemple" class="org.springframework.jms.core.JmsTemplate">
+    <property name="connectionFactory" ref="connectionFactory"></property>
+    </bean>  
+    
+    <bean class="com.jsm.produce.ProduceSeviceImp"></bean>
+</beans>

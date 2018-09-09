@@ -1,0 +1,3 @@
+com\shiro_l\controller\UserController.class
+com\shiro_l\entity\User.class
+com\shiro_l\realm\CustRealm.class
