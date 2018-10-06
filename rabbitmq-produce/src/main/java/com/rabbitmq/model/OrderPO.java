@@ -3,16 +3,12 @@ package com.rabbitmq.model;
 import java.io.Serializable;
 
 /**
- * 
- * 
  * <p>
  * Title: OrderPO
  * </p>
- * 
  * <p>
  * Description:
  * </p>
- * 
  * @author shenjian
  * @date 2018年9月24日
  */
