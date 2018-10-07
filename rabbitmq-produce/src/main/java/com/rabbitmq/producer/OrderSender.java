@@ -1,4 +1,4 @@
-package com.rabbitmq.service;
+package com.rabbitmq.producer;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.rabbit.support.CorrelationData;

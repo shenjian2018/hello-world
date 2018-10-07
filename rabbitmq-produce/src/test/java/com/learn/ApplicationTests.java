@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.rabbitmq.Application;
 import com.rabbitmq.model.OrderPO;
-import com.rabbitmq.service.OrderSender;
+import com.rabbitmq.producer.OrderSender;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes=Application.class)

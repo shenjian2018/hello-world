@@ -11,6 +11,7 @@ import com.rabbitmq.dao.BrokerMessageLogDao;
 import com.rabbitmq.dao.OrderDao;
 import com.rabbitmq.model.BrokerMessageLogPO;
 import com.rabbitmq.model.OrderPO;
+import com.rabbitmq.producer.OrderSender;
 import com.rabbitmq.util.FastJsonConvertUtils;
 /**
  * <p>Title: OrderService</p>  

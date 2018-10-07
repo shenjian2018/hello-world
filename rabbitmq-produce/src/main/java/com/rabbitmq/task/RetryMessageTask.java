@@ -11,7 +11,7 @@ import com.rabbitmq.Constant.Constants;
 import com.rabbitmq.dao.BrokerMessageLogDao;
 import com.rabbitmq.model.BrokerMessageLogPO;
 import com.rabbitmq.model.OrderPO;
-import com.rabbitmq.service.OrderSender;
+import com.rabbitmq.producer.OrderSender;
 import com.rabbitmq.util.FastJsonConvertUtils;
 
 public class RetryMessageTask {
