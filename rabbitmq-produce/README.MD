@@ -104,6 +104,20 @@ RabbitMQ 可靠投递
 
 事务机制和publisher confirm机制确保的是消息能够正确的发送至RabbitMQ，这里的“发送至RabbitMQ”的含义是指消息被正确的发往至RabbitMQ的交换器，如果此交换器没有匹配的队列的话，那么消息也将会丢失。所以在使用这两种机制的时候要确保所涉及的交换器能够有匹配的队列。更进一步的讲，发送方要配合mandatory参数或者备份交换器一起使用来提高消息传输的可靠性。
 
+
+Confirm发送方确认模式
+Confirm发送方确认模式使用和事务类似，也是通过设置Channel进行发送方确认的。
+
+Confirm的三种实现方式：
+
+方式一：channel.waitForConfirms()普通发送方确认模式；
+
+方式二：channel.waitForConfirmsOrDie()批量确认模式；
+
+方式三：channel.addConfirmListener()异步监听发送方确认模式；
+
+
+
    	2 备份交换器（Alternate Exchange）
 mandatory和immediate是channel.basicPublish方法中的两个参数，它们都有当消息传递过程中不可达目的地时将消息返回给生产者的功能。而RabbitMQ提供的备份交换器（Alternate Exchange）可以将未能被交换器路由的消息（没有绑定队列或者没有匹配的绑定）存储起来，而不用返回给客户端。
 RabbitMQ 3.0版本开始去掉了对于immediate参数的支持，对此RabbitMQ官方解释是：immediate参数会影响镜像队列的性能，增加代码复杂性，建议采用TTL和DLX的方法替代。所以本文只简单介绍mandatory和备份交换器。
